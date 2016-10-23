@@ -300,6 +300,7 @@
 				BF3AE64C1DB232C6002BE324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
