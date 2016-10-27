@@ -25,9 +25,15 @@ class ViewController: UIViewController {
     @IBAction func showAlert(){
         // IB: inteface builder action, it is the show_alert controller.
         
-        let alert = UIAlertController(title: "Helloworld", message: "This is my first app", preferredStyle: .alert)
+        let message = "The value of the slider is now: \(currentValue)"
         
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        let alert = UIAlertController(title: "Slider Value",
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK",
+                                   style: .default,
+                                   handler: nil)
         
         alert.addAction(action)
         
@@ -35,9 +41,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderMoved(_ slider:UISlider){
-        print("The value of the slider is now: \(slider.value)")
+        //print("The value of the slider is now: \(slider.value)")
+        currentValue = lroundf(slider.value)
     }
-
 
 }
 
