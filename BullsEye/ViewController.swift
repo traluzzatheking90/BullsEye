@@ -10,11 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var slider: UISlider!
+    
+    // the current value starts from 50 because is the center of the sider at startup
     var currentValue: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib. Good place to instance variables
+        // Before loading Storyboard
+        currentValue = lroundf(slider.value)
     }
 
     override func didReceiveMemoryWarning() {
