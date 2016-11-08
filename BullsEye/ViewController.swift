@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var targetLabel: UILabel!
     
     // the current value of the slider
     var currentValue: Int = 0
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.startNewRound()
+        self.updateLabels()
         
     }
 
@@ -48,6 +50,7 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         
         self.startNewRound()
+        self.updateLabels()
     }
     
     @IBAction func sliderMoved(_ slider:UISlider){
@@ -61,6 +64,10 @@ class ViewController: UIViewController {
         currentValue = 50
         slider.value = Float(currentValue)
     
+    }
+    
+    func updateLabels(){
+        targetLabel.text = String(targetValue) //targetLabel.text = "\(targetValue)" the same
     }
 
 }
