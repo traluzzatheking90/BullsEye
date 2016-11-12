@@ -35,7 +35,13 @@ class ViewController: UIViewController {
     @IBAction func showAlert(){
         // IB: inteface builder action, it is the show_alert controller.
         
-        let message = "The value of the slider is now: \(currentValue)" + "\n The target value is \(targetValue)"
+        var difference: Int
+        
+        difference = abs ( currentValue - targetValue)
+        
+        let message = "The value of the slider is now: \(currentValue)"
+                     + "\n The target value is \(targetValue)"
+                     + "\n The target value is \(difference)"
         
         let alert = UIAlertController(title: "Slider Value",
                                       message: message,
