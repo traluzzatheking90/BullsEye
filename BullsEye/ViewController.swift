@@ -34,14 +34,13 @@ class ViewController: UIViewController {
     
     @IBAction func showAlert(){
         // IB: inteface builder action, it is the show_alert controller.
+        // let and not var for difference and message because are costants
+        let difference = abs ( currentValue - targetValue)
         
-        var difference: Int
+        let points = 100 - difference
         
-        difference = abs ( currentValue - targetValue)
         
-        let message = "The value of the slider is now: \(currentValue)"
-                     + "\n The target value is \(targetValue)"
-                     + "\n The target value is \(difference)"
+        let message = "You scored \(points) points"
         
         let alert = UIAlertController(title: "Slider Value",
                                       message: message,
@@ -77,4 +76,3 @@ class ViewController: UIViewController {
     }
 
 }
-
